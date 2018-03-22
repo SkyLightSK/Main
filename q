@@ -1,27 +1,45 @@
-[1mdiff --git a/first b/first[m
-[1mindex a1d84e6..9b7a53b 100644[m
-[1m--- a/first[m
-[1m+++ b/first[m
-[36m@@ -1 +1 @@[m
-[31m-Jazz this is git test file[m
-\ No newline at end of file[m
-[32m+[m[32mserg lah[m
-\ No newline at end of file[m
-[1mdiff --git a/second b/second[m
-[1mindex 5755519..c3317b4 100644[m
-[1m--- a/second[m
-[1m+++ b/second[m
-[36m@@ -1 +1 @@[m
-[31m-This is scond file for git and changes[m
-\ No newline at end of file[m
-[32m+[m[32mThis is scond file for git and changes2[m
-\ No newline at end of file[m
-[1mdiff --git a/third b/third[m
-[1mindex 8a681eb..f84a4ba 100644[m
-[1m--- a/third[m
-[1m+++ b/third[m
-[36m@@ -1 +1 @@[m
-[31m-This is third file for git and changes[m
-\ No newline at end of file[m
-[32m+[m[32mThis is third file for git and changes3[m
-\ No newline at end of file[m
+<?php
+//echo 'Write your code here';
+
+$products = [
+    "еда" => [
+        "овощи",    
+        "фрукты"
+    ],
+    "техника" => [
+        "бытовая",    
+        "промышленная"
+    ],
+    "транспорт" => [
+        "легковые" => [
+            "тесла",
+            "bmv"
+        ],
+        "грузовые"
+    ]
+    
+];
+
+
+function wfit($data, $level = 1){
+    
+    foreach($data as $key => $value){
+
+        
+
+        if(is_array($value)){
+            
+            echo str_repeat("-", $level) ." : ". $key . "\n" ;
+            wfit($value  , $level + 1);
+            
+            continue;
+    }
+        echo str_repeat("-", $level) ." : ". $value . "\n";
+        
+    }
+}
+
+wfit($products);
+//Given: "2000 10003 1234000 44444444 9999 11 11 22 123"
+//Expected: "11 11 2000 10003 22 123 1234000 44444444 9999"
+?>
